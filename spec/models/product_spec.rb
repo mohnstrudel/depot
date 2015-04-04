@@ -67,18 +67,14 @@ RSpec.describe Product, type: :model do
 	end
 
 	describe "when creating products with identical names" do
-		let(:book1) { FactoryGirl.create(:product, title: 'hello', id: 1) }
-		let(:book2) { FactoryGirl.create(:product, title: 'hello', id: 2) }
+		let(:book) { FactoryGirl.build(:product, title: 'identical') }
 
-		it "raises unique validation error" do
-			expect(book2).not_to be_valid
-		end
+  		before do
+    		FactoryGirl.create(:product, title: 'identical')
+  		end
 
-		it "raises unique validation error" do
-			expect(book1).not_to be_valid
-			# book2.invalid?
-			# expect(book2.errors[:title]).to include("has already been taken")
-		end
-
+  		it "raises unique validation error" do
+    		expect(book).not_to be_valid
+  		end
 	end
 end
