@@ -31,7 +31,8 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to store_url }
+        format.js { @current_item = @line_item}
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -61,7 +62,7 @@ class LineItemsController < ApplicationController
     if @line_item.quantity > 1
       @line_item.quantity -= 1
       @line_item.save!
-      redirect_to @line_item.cart, notice: 'One exemplar removed from cart'
+      redirect_to store_url, notice: 'One exemplar removed from cart'
     else
       @line_item.destroy
         respond_to do |format|
