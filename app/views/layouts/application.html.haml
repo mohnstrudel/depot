@@ -23,6 +23,14 @@
     %li= link_to "News", '#' 
     %li= link_to "Contact", '#' 
     %li= Date.today()
+   -if session[:user_id]
+    %ul
+     %li= link_to 'Orders', orders_path
+     %li= link_to 'Products', products_path
+     %li= link_to 'Users', users_path
+    = button_to 'Logout', logout_path, method: :delete
+   -else
+    = button_to 'Login', login_path, method: :get
 
   #main
    =yield
