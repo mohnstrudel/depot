@@ -7,16 +7,16 @@
           %li= msg
 
   .field
-    = f.label :name
+    = f.label :name, t('.name')
     = f.text_field :name, size: 40
   .field
-    = f.label :address
+    = f.label :address, t('.address_html')
     = f.text_area :address, rows: 3, cols: 40
   .field
-    = f.label :email
+    = f.label :email, t('.email')
     = f.text_field :email, size: 40
   .field
-    = f.label :pay_type
-    = f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Select a payment method'
+    = f.label :pay_type, t('.pay_type')
+    = f.select :pay_type, Order::PAYMENT_TYPES, prompt: t('.pay_promt_html')
   .actions
-    = f.submit 'Place Order'
+    = f.submit t('.submit')

@@ -1,0 +1,53 @@
+ru:
+ layouts:
+  application:
+   title:			"Прагматичная книжная полка"
+   home:			"Главная"
+   questions:		"Вопросы"
+   news:			"Новости"
+   contact:			"Контакты"
+
+ store:
+  index:
+   title_html:		"Ваш прагматичный каталог"
+   add_html:		"Добавить в корзину"
+
+ carts:
+  cart:
+   title:			"Ваша корзина"
+   empty:			"Очистить корзину"
+   checkout:		"К оплате"
+   confirm_sure:	"Вы уверены?"
+
+ number:
+  currency:
+   format:
+    unit:			"$US"
+    precision:		2
+    separator:		","
+    delimiter:		"."
+    format:			"%n&nbsp;%u"
+
+ orders:
+  new:
+   legend:			"Пожалуйста, введите свои данные"
+  form:
+   name:			"Имя"
+   address_html:	"Адрес"
+   email:			"Эл. почта"
+   pay_type:		"Тип платежа"
+   pay_promt_html:	"Выберите метод оплаты"
+   submit:			"Заказать"
+
+ activerecord:
+  errors:
+   messages:
+    inclusion:		"нет выбранного элемента в списке"
+    blank:			"поле пустое"
+
+ errors:
+  template:
+   body:			"Обнаружены следующие проблемы:"
+   header:			
+    one:			"1 ошибка в %{model} найдена"
+    other:			"%{count} ошибок найдено в моделе %{model}"
