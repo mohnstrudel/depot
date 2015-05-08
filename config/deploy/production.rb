@@ -1,4 +1,4 @@
-#require 'bundler/capistrano'
+require 'bundler/capistrano'
 require 'rvm/capistrano'
 
 server '46.101.161.208', roles: [:web, :app, :db], primary: true
@@ -6,17 +6,22 @@ server '46.101.161.208', roles: [:web, :app, :db], primary: true
 set :user, 'deployer'
 set :application, 'depot'
 
-set :repo_url, "git@github.com:mohnstrudel/depot.git"
+
 set :deploy_to, "home/#{fetch(:user)}/deploy/#{fetch(:application)}"
 
 # misc options
 set :deploy_via, :remote_cache
+
 set :scm, 'git'
+set :repository, "git@github.com:mohnstrudel/#{fetch(:application)}.git"
+
 set :branch, 'master'
 set :scm_verbose, true
 set :use_sudo, false
 set :normalize_asset_timestamps, false
 set :stage,		:production
+
+after "deploy", "deploy:cleanup" # keep only the last 5 releases    
 
 namespace :deploy do
   %w[start stop restart].each do |command|

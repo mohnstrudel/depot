@@ -5,6 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
+group :production do
+  gem 'pg'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'haml-rails'
@@ -19,6 +23,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -30,13 +35,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
+gem 'rvm-capistrano'
+
 
 # Use Capistrano for deployment
 group :development do
-	gem 'capistrano-rails'
-	gem 'capistrano-bundler'
-	gem 'rvm-capistrano'
+  gem 'capistrano', '~> 2.15.5'
 end
 
 group :development, :test do
