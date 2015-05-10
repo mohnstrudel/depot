@@ -31,7 +31,9 @@ set :bundle_env_variables, { 'NOKOGIRI_USE_SYSTEM_LIBRARIES' => 1 }
 set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
 
-after "deploy", "deploy:cleanup" # keep only the last 5 releases    
+after "deploy", "deploy:cleanup" # keep only the last 5 releases  
+
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets tmp/sessions}  
 
 namespace :deploy do
   task :restart do

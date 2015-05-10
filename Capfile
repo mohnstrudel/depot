@@ -1,6 +1,6 @@
-load 'deploy'
+#load 'deploy'
 #load 'deploy/assets'
-load 'config/deploy'
+#load 'config/deploy'
 
 
 # Load DSL and set up stages
@@ -24,7 +24,7 @@ load 'config/deploy'
 #   https://github.com/capistrano/rails
 #   https://github.com/capistrano/passenger
 #
-# require 'capistrano/rvm'
+require 'capistrano/rvm'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
 # require 'capistrano/bundler'
