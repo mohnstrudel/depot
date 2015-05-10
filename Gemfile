@@ -41,10 +41,10 @@ gem 'unicorn'
 
 # Use Capistrano for deployment
 group :development do
-  gem 'capistrano', '~> 2.15.5'
+  gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
-  gem 'rvm-capistrano'
+  gem 'capistrano-rvm', github: "capistrano/rvm"
 end
 
 group :development, :test do
