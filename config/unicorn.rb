@@ -13,13 +13,13 @@ timeout 30
  
 # This is where we specify the socket.
 # We will point the upstream Nginx module to this socket later on
-listen "#{root}/tmp/sockets/unicorn.sock", :backlog => 64
+listen "#{root}/current/tmp/sockets/unicorn.sock", :backlog => 64
  
-pid "#{root}/tmp/pids/unicorn.pid"
+pid "#{root}/current/tmp/pids/unicorn.pid"
  
 # Set the path of the log files inside the log folder of the testapp
-stderr_path "#{root}/log/unicorn.stderr.log"
-stdout_path "#{root}/log/unicorn.stdout.log"
+stderr_path "#{root}/current/log/unicorn.stderr.log"
+stdout_path "#{root}/current/log/unicorn.stdout.log"
  
 before_fork do |server, worker|
 # This option works in together with preload_app true setting
